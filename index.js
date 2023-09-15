@@ -1,11 +1,9 @@
-#!/usr/bin/env node
-const note = process.argv[2]
-console.log(process.argv)
+import yargs from 'yargs'
+import { hideBin } from 'yargs/helpers'
 
-//process.argv is an array with 3 values, first value is the environment, second is the file and the third thing is the argument passed when calling the command
-const newNote = {
-    content: note,
-    id: Date.now()
-}
-
-console.log(newNote)
+yargs(hideBin(process.argv))
+  .command('curl <url>', 'fetch the contents of the URL', () => {}, (argv) => {
+    console.info(argv)
+  })
+  .demandCommand(1)
+  .parse()
