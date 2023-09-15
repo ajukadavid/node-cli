@@ -2,6 +2,7 @@
   "name": "intro-node",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "bin": {
     "note": "./index.js"
   },
