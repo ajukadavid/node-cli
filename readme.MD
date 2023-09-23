@@ -1,0 +1,1 @@
+This is a CLI app that helps to create notes using your local file system and you can also filter, add new notes and delete notes.
