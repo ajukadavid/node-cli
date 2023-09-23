@@ -1,6 +1,6 @@
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import { newNote, getAllNotes } from './notes.js'
+import { newNote, getAllNotes, findNotes } from './notes.js'
 
 const listNotes = notes => {
   notes.forEach(({id, content, tags}) => {
@@ -38,7 +38,8 @@ yargs(hideBin(process.argv))
       type: 'string'
     })
   }, async (argv) => {
-    
+    const matches = await findNotes(argv.filter)
+    listNotes(matches)
   })
   .command('remove <id>', 'remove a note by id', yargs => {
     return yargs.positional('id', {
