@@ -10,7 +10,7 @@ export const saveDB = async (db)=> {
     await fs.writeFile(DB_PATH, JSON.stringify(db, null, 2))
 }
 
-export const insertDB =  async (note) => {
+export const fff =  async (note) => {
     const db = await getDB()
     db.notes.push(note)
     await saveDB(db)
