@@ -7,3 +7,14 @@ const interpolate = (html, data) => {
     return data[placeholder] || '';
   });
 }
+
+const formatNotes = notes => {
+    return notes.map(note => {
+        return `<div classs="note">
+        <p>${note.content}</p>
+        <div class="tags">
+        ${notes.tags.map(tag => `<span class="tag">${tag}</span>`)}
+        </div>
+        </div>`
+    }).join('\n')
+} 
